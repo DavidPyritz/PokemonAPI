@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokemonAPI</title>
+    <link rel="shortcut icon" href="img/ball-1556117_640.jpg">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fontstyle.css">
+    <script src="./script.js"></script>
+    <script src="./scriptTemplates.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="init()">
+    <div class="header">
+        <div>
+            <h1>Pokédex</h1>
+        </div>
+        <div class="headerPicturesMain">
+            <img class="headerPictures" src="./img/pokemon-1575834_1280.jpg" alt="logo" />
+            <img class="headerPictures" src="./img/pokemon-1577763_1280.jpg" alt="logo" />
+            <img class="headerPictures" src="./img/pokemon-1575830_1280.jpg" alt="logo" />
+        </div>
+        <div>
+            <h1>Pokédex</h1>
+        </div>
+    </div>
+    <div class="searchPokemonInput">
+        <input id="search_input" type="text" placeholder="Such nach Pokémon..." oninput="searchPokemon()">
+    </div>
+    <div id="search_results"></div>
+    <div class="loader" id="loader"></div>
+    <div class="main" id="content">
+        <button class="buttonStyle" id="contentWhileAction" onclick="nextPokeContent()">Next Pokemons</button>
+        
+    </div>
+    <div class="d-none sizeSpecsFrontend" id="sizeStyle"></div>
+    <div class="footer">
+            <span class="spanStyleFooter">(c) Copyright 2024 Developer Akademie GmbH</span>
+            <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+        </div>
+</body>
+
+</html>

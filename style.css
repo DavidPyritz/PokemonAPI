@@ -1,0 +1,465 @@
+* {
+    scroll-behavior: smooth;
+    font-family: 'Lato';
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #94ace3;
+    gap: 24px;
+    position: relative;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+    border-radius: 50%;
+    border: 8px solid black;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100px;
+    background: black;
+    top: 50px;
+    transform: translatey(-50%);
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background: white;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+}
+
+.main {
+    min-height: 100vh;
+    height: 100%;
+    padding: 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    background-color: rgb(191, 198, 209);
+    position: relative;
+    overflow: hidden;
+    transition: overflow 0.3s;
+}
+
+.searchPokemonInput {
+    background-color: rgb(191, 198, 209);
+    
+}
+
+.no-scroll {
+    overflow: hidden;
+   
+}
+
+.buttonStyle {
+    height: 40px;
+    width: 170px;
+    border-radius: 10px;
+    color: white;
+    background-color: #093b3b;
+    position: fixed;   
+    cursor: pointer;
+    top: 82%;
+    flex-wrap: wrap;
+}
+
+button{
+    cursor: pointer;
+}
+
+a {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+.headerPicturesMain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 45%;
+}
+
+.spanStyleFooter {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+.headerPictures {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.borderStyle:hover img {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+.pokemonCard:hover img {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.borderStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: rgb(60, 60, 206);
+    cursor: pointer;
+}
+
+.sizeSpecsFrontend {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    text-transform: capitalize;
+    text-align: center;
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pokemonCard {
+    background-color: rgba(0, 0, 0, 0.822);
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 100%;
+    border-radius: 10px;
+    color: wheat;
+    position: fixed;
+    top: 20px;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.leftRightCard {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.leftRightCard button {
+    flex: 1;
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 5px;
+    color: wheat;
+    transition: background-color 0.3s;
+}
+
+.leftRightCard button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.heightWeightStyle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sizeSpecsBackend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.type-normal {
+    background: #A9A878;
+    border-color: #A9A878;
+}
+
+.type-fire {
+    background-color: #F08030;
+    border-color: #F08030;
+}
+
+.type-water {
+    background-color: #6890F0;
+    border-color: #6890F0;
+}
+
+.type-electric {
+    background-color: #F8D030;
+    border-color: #F8D030;
+}
+
+.type-grass {
+    background-color: #78C850;
+    border-color: #78C850;
+}
+
+.type-ice {
+    background-color: #99D8D8;
+    border-color: #99D8D8;
+}
+
+.type-fighting {
+    background-color: #C03028;
+    border-color: #C03028;
+}
+
+.type-poison {
+    background-color: #A040A0;
+    border-color: #A040A0;
+}
+
+.type-ground {
+    background-color: #E0C068;
+    border-color: #E0C068;
+}
+
+.type-flying {
+    background-color: #A890F0;
+    border-color: #A890F0;
+}
+
+.type-psychic {
+    background-color: #F85888;
+    border-color: #F85888;
+}
+
+.type-bug {
+    background-color: #A8B824;
+    border-color: #A8B824;
+}
+
+.type-rock {
+    background-color: #B8A038;
+    border-color: #B8A038;
+}
+
+.type-ghost {
+    background-color: #705898;
+    border-color: #705898;
+}
+
+.type-dragon {
+    background-color: #7038F8;
+    border-color: #7038F8;
+}
+
+.type-dark {
+    background-color: #705848;
+    border-color: #705848;
+}
+
+.type-steel {
+    background-color: #B8B8D0;
+    border-color: #B8B8D0;
+}
+
+.type-fairy {
+    background-color: #F0B6BC;
+    border-color: #F0B6BC;
+}
+
+.text span {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 2px;
+    color: white;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid currentColor;
+}
+
+.progress {
+    height: 12px;
+    background-color: lightgray;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 10px;
+    width: 50%;
+    display: inline-block;
+}
+
+.progress-bar-high {
+    background-color: green;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar-medium {
+    background-color: yellow;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar-low {
+    background-color: red;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stat-name {
+    width: 25%;
+    font-size: 14px;
+    font-weight: 300;
+    color: aquamarine;
+}
+
+.basic-properties {
+    font-size: 16px;
+}
+
+.footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(191, 198, 209);
+    gap: 6px;
+    font-family: 'Lato';
+}
+
+@media (max-width: 450px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .headerPicturesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .headerPictures {
+        display: flex;
+        object-fit: cover;
+    }
+
+    .buttonStyle {
+        position: fixed;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    h1 {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.d-none {
+    display: none;
+}
